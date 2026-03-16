@@ -444,6 +444,12 @@ transform:translateY(20px);
 transition:0.35s;
 }
 
+.sede-card:hover .info-hover,
+.sede-card.activo .info-hover{
+opacity:1;
+transform:translateY(0);
+}
+
 
 .sede-card:hover .info-hover{
 opacity:1;

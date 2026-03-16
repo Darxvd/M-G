@@ -66,3 +66,26 @@ left: -getScrollAmount(),
 behavior: "smooth"
 });
 };
+
+
+if(window.innerWidth <= 768){
+
+const cards = document.querySelectorAll(".sede-card");
+
+cards.forEach(card => {
+
+card.addEventListener("click", () => {
+
+cards.forEach(c=>{
+if(c !== card){
+c.classList.remove("activo");
+}
+});
+
+card.classList.toggle("activo");
+
+});
+
+});
+
+}
