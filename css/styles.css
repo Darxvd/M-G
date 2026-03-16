@@ -258,48 +258,57 @@ body{
   border-radius:10px;
   box-shadow:0 15px 35px rgba(0,0,0,0.15);
 }
-.valores {
-    text-align: center;
-    padding: 20px 20px;
-    background: #ffffff;
+.valores{
+    text-align:center;
+    padding:30px 10px;
+    background: linear-gradient(135deg,#0d2b5c,#105091);
 }
 
-.valores h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
-    color: #0d2b5c;
-    font-weight: 600;
+/* TITULO */
+
+.valores h2{
+    font-size:32px;
+    margin-top: 10px;
+    margin-bottom:10px;
+    color:white;
+    font-weight:600;
 }
 
 .valores-sub{
-    color:#666;
-    margin-bottom:20px;
+    color:#d9e4f5;
+    margin-bottom:40px;
 }
 
-.valores-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+/* CONTENEDOR */
+
+.valores-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:25px;
 }
 
-.valor-card {
-    width: 150px;
-    height: 140px;
-    background: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #e5e5e5;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: 0.3s;
+/* CARD */
+
+.valor-card{
+    width:160px;
+    height:140px;
+    background:white;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,0.2);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    transition:0.35s;
 }
 
-.valor-card i {
-    font-size: 20px;
-    color: white;
+/* ICONO */
+
+.valor-card i{
+    font-size:20px;
+    color:white;
     background:#105091;
     width:50px;
     height:50px;
@@ -310,18 +319,22 @@ body{
     margin-bottom:12px;
 }
 
-.valor-card p {
-    font-weight: 500;
-    color: #0d2b5c;
-    font-size: 14px;
-    margin: 0;
+/* TEXTO */
+
+.valor-card p{
+    font-weight:500;
+    color:#0d2b5c;
+    font-size:14px;
+    margin:0;
 }
 
-/* Hover */
+/* HOVER */
+
 .valor-card:hover{
+    -webkit-transform: translateY(-6px);
+    transform:translateY(-6px);
+    box-shadow:0 15px 35px rgba(0,0,0,0.25);
     background:#105091;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
 .valor-card:hover p{
@@ -332,6 +345,209 @@ body{
     background:white;
     color:#105091;
 }
+
+
+.sedes{
+padding:80px 0;
+background:#f4f6f9;
+overflow:hidden;
+}
+
+.sedes-container{
+display:flex;
+align-items:center;
+gap:60px;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+/* TEXTO */
+
+.sedes-texto{
+width:280px;
+}
+
+.sedes-texto h2{
+font-size:38px;
+font-weight:700;
+color:#1b3f73;
+margin-bottom:15px;
+}
+
+.sedes-texto span{
+display:block;
+}
+
+.sedes-texto p{
+font-size:18px;
+color:#333;
+line-height:1.5;
+}
+
+/* CONTENEDOR DEL SLIDER */
+
+.slider-c{
+position:relative;
+width:100%;
+overflow:hidden;
+}
+
+/* SLIDER */
+
+.sedes-slider{
+display:flex;
+gap:25px;
+overflow-x:auto;   /* IMPORTANTE */
+scroll-behavior:smooth;
+scrollbar-width:none;
+}
+
+.sedes-slider::-webkit-scrollbar{
+display:none;
+}
+
+/* CARD */
+
+.sede-card{
+min-width:320px;
+height:420px;
+border-radius:20px;
+overflow:hidden;
+position:relative;
+flex-shrink:0;
+box-shadow:0 10px 25px rgba(0,0,0,0.15);
+transition:0.4s;
+}
+
+.sede-card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,0.25);
+}
+
+.info-hover{
+position:absolute;
+top:0;
+left:0;
+width:90%;
+height:90%;
+background:rgba(13,43,92,0.95);
+color:white;
+padding:12px 25px;
+
+display:flex;
+align-items:center;
+flex-direction:column;
+justify-content:center;
+opacity:0;
+transform:translateY(20px);
+transition:0.35s;
+}
+
+
+.sede-card:hover .info-hover{
+opacity:1;
+transform:translateY(0);
+}
+
+.titulo-servicio{
+font-size:18px;
+font-weight:600;
+margin-bottom:10px;
+border-bottom:1px solid rgba(255,255,255,0.3);
+padding-bottom:6px;
+letter-spacing:0.5px;
+}
+
+.btn-cotizar{
+margin-top:auto;
+background:white;
+color:#6b6b6b;
+border:none;
+padding:10px 18px;
+font-size:14px;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+font-weight:500;
+}
+
+.btn-cotizar:hover{
+background:#f1f1f1;
+color:#333;
+}
+
+.sede-card img{
+width:320px;
+height:100%;
+object-fit:cover;
+display:block;
+}
+
+/* OVERLAY */
+
+.overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:300px;
+height:80px;
+display:flex;
+align-items:flex-end;
+padding:20px;
+background:linear-gradient(to top, rgba(0,30,70,0.9), transparent);
+color:white;
+font-size:18px;
+font-weight:600;
+letter-spacing:1px;
+}
+
+/* FLECHAS */
+
+.fizquierda,.fderecha{
+position:absolute;
+top:50%;
+transform:translateY(-50%);
+background:#1b3f73;
+color:white;
+border:none;
+font-size:28px;
+width:45px;
+height:45px;
+border-radius:50%;
+cursor:pointer;
+z-index:10;
+}
+
+.fizquierda{
+left: 5px;
+}
+
+.fderecha{
+right: 5px;
+}
+
+/* PUNTOS */
+
+.puntos{
+display:flex;
+justify-content:center;
+margin-top:20px;
+gap:10px;
+}
+
+.puntos span{
+width:12px;
+height:12px;
+background:#c5c5c5;
+border-radius:50%;
+cursor:pointer;
+}
+
+.puntos span.activo{
+background:#1b3f73;
+}
+
 
 /*tablet*/
 @media (max-width: 1024px) {
@@ -354,6 +570,22 @@ body{
 
     .nav-links {
         gap: 25px;
+    }
+
+    .sedes-container{
+    flex-direction:column;
+    text-align:center;
+    gap:40px;
+    }
+
+    .sedes-texto{
+    width:100%;
+    max-width:500px;
+    }
+
+    .info-hover{
+        max-width: 100%;
+        padding-left: 10px;
     }
 }
 
@@ -431,12 +663,71 @@ body{
         margin-top:10px;
     }
 
-        .valores-container{
-        gap:20px;
+    .valores-container{
+        gap:18px;
     }
 
     .valor-card{
         width:140px;
         height:130px;
     }
+
+    .sedes{
+        padding: 0px;
+    }
+
+    .sedes-container{
+    flex-direction:column;
+    gap:40px;
+    text-align:center;
+    }
+
+    /* TEXTO ARRIBA */
+
+    .sedes-texto{
+    width:100%;
+    max-width:500px;
+    }
+
+    /* SLIDER */
+
+    .slider-c{
+    width:100%;
+    }
+
+    /* CARD UNA SOLA */
+
+    .sede-card{
+    min-width:100%;
+    height:420px;
+    }
+
+    /* IMAGEN */
+
+    .sede-card img{
+    min-width:100%;
+    }
+
+    .info-hover{
+        min-width: 100%;
+        padding-left: 0px;
+    }    
+
+    /* OVERLAY */
+
+    .overlay{
+    width:100%;
+    }
+
+    /* FLECHAS */
+
+    .fizquierda{
+    left:10px;
+    }
+
+    .fderecha{
+    right:10px;
+    }
+
+
 }

@@ -41,3 +41,28 @@ const navLinks = document.querySelector(".nav-links");
 menuToggle.addEventListener("click", () => {
     navLinks.classList.toggle("active");
 });
+
+const slider = document.getElementById("slider-cx");
+const izquierda = document.querySelector(".fizquierda");
+const derecha = document.querySelector(".fderecha");
+
+const card = slider.querySelector(".sede-card");
+
+function getScrollAmount(){
+    const gap = 25; // mismo gap de tu CSS
+    return card.offsetWidth + gap;
+}
+
+derecha.onclick = () => {
+slider.scrollBy({
+left: getScrollAmount(),
+behavior: "smooth"
+});
+};
+
+izquierda.onclick = () => {
+slider.scrollBy({
+left: -getScrollAmount(),
+behavior: "smooth"
+});
+};
