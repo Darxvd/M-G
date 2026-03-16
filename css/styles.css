@@ -329,21 +329,26 @@ body{
 }
 
 /* HOVER */
+.valor-card{
+transition: all .3s ease;
+-webkit-transition: all .3s ease;
+will-change: transform;
+}
 
 .valor-card:hover{
-    -webkit-transform: translateY(-6px);
-    transform:translateY(-6px);
-    box-shadow:0 15px 35px rgba(0,0,0,0.25);
-    background:#105091;
+-webkit-transform: translateY(-6px);
+transform: translateY(-6px);
+box-shadow:0 15px 35px rgba(0,0,0,0.25);
+background:#105091;
 }
 
 .valor-card:hover p{
-    color:white;
+color:white;
 }
 
 .valor-card:hover i{
-    background:white;
-    color:#105091;
+background:white;
+color:#105091;
 }
 
 
