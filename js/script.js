@@ -89,3 +89,55 @@ card.classList.toggle("activo");
 });
 
 }
+const items = document.querySelectorAll(".item");
+const fondo = document.getElementById("fondo");
+
+const first = document.querySelector(".item.active");
+fondo.style.backgroundImage = `url(${first.dataset.img})`;
+
+items.forEach(item => {
+
+item.addEventListener("click", () => {
+
+items.forEach(i => i.classList.remove("active"));
+item.classList.add("active");
+
+const img = item.dataset.img;
+fondo.style.backgroundImage = `url(${img})`;
+
+});
+
+});
+
+const contenedor = document.querySelector(".contenedor");
+
+/* SOLO EN MÓVIL */
+if(window.innerWidth <= 768){
+
+contenedor.addEventListener("scroll", () => {
+
+let scrollLeft = contenedor.scrollLeft;
+let width = contenedor.clientWidth;
+
+/* detectar card visible */
+let index = Math.round(scrollLeft / width);
+
+if(items[index]){
+
+/* quitar activos */
+items.forEach(i => i.classList.remove("active"));
+items[index].classList.add("active");
+
+/* animación suave */
+fondo.style.opacity = "0";
+
+setTimeout(()=>{
+fondo.style.backgroundImage = `url(${items[index].dataset.img})`;
+fondo.style.opacity = "1";
+},200);
+
+}
+
+});
+
+}
