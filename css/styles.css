@@ -596,6 +596,8 @@ position:relative;
 z-index:2;
 }
 
+
+
 .item{
 flex:1;
 display:flex;
@@ -607,8 +609,22 @@ padding:20px;
 cursor:pointer;
 transition:0.4s;
 background:rgba(0,0,0,0.3);
+position: relative;
 }
 
+.top{
+    position:absolute;
+    top:220px;              /* 👈 AJUSTA ESTA ALTURA */
+    left:50%;
+    transform:translateX(-50%);
+}
+
+/* LOGO */
+.logo{
+    width:180px;          /* 👈 MÁS GRANDE */
+    max-width:90%;
+    transition:0.3s;
+}
 .item.active{
 flex:3;
 background:rgba(0,0,0,0.6);
