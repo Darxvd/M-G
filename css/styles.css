@@ -460,50 +460,70 @@ transform:translateY(-10px);
 box-shadow:0 20px 40px rgba(0,0,0,0.25);
 }
 
-.info-hover{
-position:absolute;
-top:0;
-left:0;
-width:90%;
-height:90%;
-background:rgba(13,43,92,0.95);
-color:white;
-padding:12px 25px;
+.info-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* estaba en 10%, por eso se veía mal */
+    height: 100%;
+    background: rgba(13,43,92,0.95);
+    color: white;
 
-display:flex;
-align-items:center;
-flex-direction:column;
-justify-content:center;
-opacity:0;
-transform:translateY(20px);
-transition:0.35s;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.35s;
 }
 
+/* Hover */
 .sede-card:hover .info-hover,
-.sede-card.activo .info-hover{
-opacity:1;
-transform:translateY(0);
+.sede-card.activo .info-hover {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-
-.sede-card:hover .info-hover{
-opacity:1;
-transform:translateY(0);
+/* Título */
+.titulo-servicio {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 6px;
+    letter-spacing: 0.5px;
 }
 
-.titulo-servicio{
-font-size:18px;
-font-weight:600;
-margin-bottom:10px;
-border-bottom:1px solid rgba(255,255,255,0.3);
-padding-bottom:6px;
-letter-spacing:0.5px;
+/* Lista */
+.info-hover ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    padding-right: 25px;
+    padding-left: 25px;
+}
+
+.info-hover ul li {
+    position: relative; /* necesario para el before */
+    padding: 8px 0 20px 25px; /* espacio para el check */
+}
+
+/* Check */
+.info-hover ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    color: #ffffff; /* verde bonito */
+    font-weight: bold;
 }
 
 .btn-cotizar{
-margin-top:auto;
-background:white;
-color:#6b6b6b;
+margin-top:20px;
+background:#ffffff;
+color:#1b3f73;
 border:none;
 padding:10px 18px;
 font-size:14px;
@@ -613,7 +633,7 @@ width:100%;
 height:100%;
 background-size:cover;
 background-position:center;
-transition:0.5s;
+background: url("img/fondo_empresas.jpg") center/cover no-repeat;
 z-index:1;
 }
 
@@ -622,11 +642,11 @@ display:flex;
 height:100%;
 position:relative;
 z-index:2;
+gap:10px;
 }
 
-
-
 .item{
+    opacity: 0.7;
 flex:1;
 display:flex;
 flex-direction:column;
@@ -636,8 +656,12 @@ color:white;
 padding:20px;
 cursor:pointer;
 transition:0.4s;
-background:rgba(0,0,0,0.3);
+background:transparent;
 position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+        z-index: 1;
 }
 
 .top{
@@ -654,8 +678,8 @@ position: relative;
     transition:0.3s;
 }
 .item.active{
-flex:3;
-background:rgba(0,0,0,0.6);
+    flex:3;
+     opacity: 1;
 }
 
 .item button{
@@ -672,6 +696,22 @@ transition:0.3s;
 .item.active button{
 opacity:1;
 }
+
+/* overlay oscuro */
+.item::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.2);
+    transition: 0.3s;
+    z-index: 0;
+}
+
+/* activo */
+.item.active::before {
+    background: rgba(0,0,0,0.05);
+}
+
 
     .container-f {
         display: flex;

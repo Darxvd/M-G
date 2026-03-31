@@ -92,57 +92,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+const items = document.querySelectorAll(".item");
 
-    /* =========================
-       5. SECCIÓN EMPRESAS (GLORIA STYLE)
-    ========================= */
-    const items = document.querySelectorAll(".item");
-    const fondo = document.getElementById("fondo");
-    const contenedor = document.querySelector(".contenedor");
+/* imagen inicial en el activo */
+const first = document.querySelector(".item.active");
+if(first){
+    first.style.backgroundImage = `url(${first.dataset.img})`;
+}
 
-    /* IMAGEN INICIAL */
-    const first = document.querySelector(".item.active");
-    if(first){
-        fondo.style.backgroundImage = `url(${first.dataset.img})`;
-    }
+/* click */
+items.forEach(item => {
 
-    /* DESKTOP → CLICK */
-    if(window.innerWidth > 768){
+    item.addEventListener("click", () => {
 
-        items.forEach(item => {
-            item.addEventListener("click", () => {
-
-                items.forEach(i => i.classList.remove("active"));
-                item.classList.add("active");
-
-                fondo.style.backgroundImage = `url(${item.dataset.img})`;
-            });
+        items.forEach(i => {
+            i.classList.remove("active");
+            i.style.backgroundImage = "none";
         });
 
-    } 
-    /* MÓVIL → SCROLL */
-    else {
+        item.classList.add("active");
+        item.style.backgroundImage = `url(${item.dataset.img})`;
 
-        contenedor.addEventListener("scroll", () => {
+    });
 
-            let scrollLeft = contenedor.scrollLeft;
-            let width = contenedor.clientWidth;
-            let index = Math.round(scrollLeft / width);
-
-            if(items[index]){
-
-                items.forEach(i => i.classList.remove("active"));
-                items[index].classList.add("active");
-
-                fondo.style.opacity = "0";
-
-                setTimeout(() => {
-                    fondo.style.backgroundImage = `url(${items[index].dataset.img})`;
-                    fondo.style.opacity = "1";
-                }, 200);
-            }
-
-        });
-    }
+});
 
 });
