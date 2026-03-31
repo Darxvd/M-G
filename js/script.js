@@ -92,29 +92,32 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+
+
 const items = document.querySelectorAll(".item");
 
-/* imagen inicial en el activo */
-const first = document.querySelector(".item.active");
-if(first){
-    first.style.backgroundImage = `url(${first.dataset.img})`;
-}
+    /* imagen inicial */
+    const first = document.querySelector(".item.active");
+    if(first){
+        first.style.backgroundImage = `url(${first.dataset.img})`;
+    }
 
-/* click */
-items.forEach(item => {
+    items.forEach(item => {
 
-    item.addEventListener("click", () => {
+        const activar = () => {
+            items.forEach(i => {
+                i.classList.remove("active");
+                i.style.backgroundImage = "none";
+            });
 
-        items.forEach(i => {
-            i.classList.remove("active");
-            i.style.backgroundImage = "none";
-        });
+            item.classList.add("active");
+            item.style.backgroundImage = `url(${item.dataset.img})`;
+        };
 
-        item.classList.add("active");
-        item.style.backgroundImage = `url(${item.dataset.img})`;
+        item.addEventListener("mouseenter", activar); // PC
+        item.addEventListener("click", activar);      // móvil
 
     });
 
-});
 
 });
