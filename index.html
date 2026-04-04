@@ -336,43 +336,51 @@
     </div>
     </div>
 </section>
-
 <div class="container-f">
 
     <!-- FORMULARIO -->
     <div class="form-section-f">
-        <div class="form-box-f">
-            <h1 class="title-f">Tu futuro empieza aquí</h1>
-            <h2 class="subtitle-f">Te asesoramos</h2>
+        <form class="form-box-f">
 
-            <input class="input-f" type="text" placeholder="Nombres y Apellidos">
-            <input class="input-f" type="email" placeholder="Correo electrónico">
+            <h1 class="title-f">Trabaja con nosotros</h1>
 
-            <select class="select-f">
-                <option>Selecciona tu código de país</option>
+            <input class="input-f" type="text" placeholder="Nombres y Apellidos" required>
+            <input class="input-f" type="email" placeholder="Correo electrónico" required>
+
+            <select class="select-f" required>
+                <option disabled selected>Selecciona tu distrito</option>
+                <option>Lima</option>
+                <option>Callao</option>
             </select>
 
-            <input class="input-f" type="text" placeholder="Número de celular">
+            <input class="input-f" type="tel" placeholder="Número de celular" required>
 
-            <select class="select-f">
-                <option>Selecciona el curso</option>
+            <select class="select-f" required>
+                <option disabled selected>Selecciona el puesto de trabajo</option>
+                <option>Operario</option>
+                <option>Supervisor</option>
             </select>
 
-            <select class="select-f">
-                <option>Selecciona tu ubicación</option>
+            <select class="select-f" required>
+                <option disabled selected>Selecciona tu ubicación</option>
+                <option>Lima Norte</option>
+                <option>Lima Sur</option>
             </select>
+
+            <!-- NUEVO: subir CV -->
+            <input class="input-f" type="file" accept=".pdf,.doc,.docx" required>
 
             <button class="button-f">ENVIAR</button>
-        </div>
+
+        </form>
     </div>
 
     <!-- IMAGEN -->
     <div class="image-section-f">
-        <img class="image-f" src="css/img/empresas/fondo-f.jpg">
+        <img class="image-f" src="css/img/empresas/fondo-f.jpg" alt="Trabajo">
     </div>
 
 </div>
-
 
 <footer class="footer-t">
     <div class="container-footer-t">
