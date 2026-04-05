@@ -120,4 +120,49 @@ const items = document.querySelectorAll(".item");
     });
 
 
+    document.getElementById("formulario").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const nombre = document.getElementById("nombre").value;
+    const dni = document.getElementById("dni").value;
+    const telefono = document.getElementById("telefono").value;
+    const correo = document.getElementById("correo").value;
+    const servicio = document.getElementById("servicio").value;
+    const file = document.getElementById("archivo").files[0];
+
+    // 🔒 Validación básica
+    if (!file) {
+        alert("Sube un archivo");
+        return;
+    }
+
+    // ☁️ SUBIR A CLOUDINARY
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "yo_correo_02003");
+
+    const res = await fetch("https://api.cloudinary.com/v1_1/dd1i77se5/upload", {
+        method: "POST",
+        body: formData
+    });
+
+    const data = await res.json();
+
+    // 📧 ENVIAR A NETLIFY
+    await fetch("/.netlify/functions/enviar", {
+        method: "POST",
+        body: JSON.stringify({
+            nombre,
+            dni,
+            telefono,
+            correo,
+            servicio,
+            archivo: data.secure_url
+        })
+    });
+
+    alert("Cotización enviada correctamente 🚀");
+});
+
+
 });
