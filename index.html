@@ -344,15 +344,15 @@
 
             <h1 class="title-f">Solicitar cotización</h1>
 
-            <input class="input-f" type="text" placeholder="Nombres y Apellidos" required>
-            
-            <input class="input-f" type="dni" placeholder="Ruc - Dni" required>
-            
-            <input class="input-f" type="tel" placeholder="Número de celular" required>
+        <input id="nombre" class="input-f" type="text" placeholder="Nombres y Apellidos" required>
 
-            <input class="input-f" type="email" placeholder="Correo electrónico" required>
+        <input id="dni" class="input-f" type="text" placeholder="Ruc - Dni" required>
 
-            <select class="select-f" required>
+        <input id="telefono" class="input-f" type="tel" placeholder="Número de celular" required>
+
+        <input id="correo" class="input-f" type="email" placeholder="Correo electrónico" required>
+
+            <select id="servicio"  class="select-f" required>
                 <option disabled selected>Tipo de Servicio</option>
                 <option>Metalmecánica</option>
                 <option>Electromecánica</option>
@@ -367,7 +367,7 @@
             </select>
 
             <label class="label-f">Adjuntar TDR-FLET-PLANOS</label>
-            <input class="input-f" type="file" accept=".pdf,.doc,.docx" required>
+            <input id="archivo" class="input-f" type="file" accept=".pdf,.doc,.docx" required>
 
             <button class="button-f">ENVIAR</button>
             <h4 class="message-f">Atendemos a empresas industriales y contratistas</h4>
