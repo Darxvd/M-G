@@ -721,6 +721,19 @@ body{
     box-sizing: border-box;
 }
 
+.label-f{
+    color: rgb(41, 41, 41);
+    display: block;       
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.message-f{
+    text-align: center;
+    color: rgb(41, 41, 41);
+
+}
+
 .input-f:focus,
 .select-f:focus {
     border-color: #105091;
@@ -836,9 +849,9 @@ body{
 }
 
 .wsp-chat {
-    position: fixed;      /* 👈 CLAVE */
-    right: 20px;          /* 👈 derecha */
-    bottom: 20px;         /* 👈 abajo (mejor UX) */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
     
     background: #25D366;
     color: white;
@@ -1070,7 +1083,7 @@ body{
     }
 
     .container-f {
-        flex-direction: column; /* 👈 clave */
+        flex-direction: column;
         min-height: 0px;
     }
 
