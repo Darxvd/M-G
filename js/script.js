@@ -150,11 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 const formData = new FormData();
                 formData.append("file", file);
                 formData.append("upload_preset", "yo_correo_02003");
+                formData.append("resource_type", "auto");
 
-                const res = await fetch("https://api.cloudinary.com/v1_1/dd1i77se5/upload", {
-                    method: "POST",
-                    body: formData
-                });
+            const res = await fetch("https://api.cloudinary.com/v1_1/dd1i77se5/auto/upload", {
+                method: "POST",
+                body: formData
+            });
 
                 const data = await res.json();
 
