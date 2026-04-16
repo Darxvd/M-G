@@ -151,9 +151,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 formData.append("file", file);
                 formData.append("upload_preset", "yo_correo_02003");
                 formData.append("resource_type", "auto");
-                formData.append("type", "upload"); // 👈 ESTA LÍNEA
 
-            const res = await fetch("https://api.cloudinary.com/v1_1/dd1i77se5/auto/upload", {
+            const res = await fetch("https://api.cloudinary.com/v1_1/dd1i77se5/raw/upload", {
                 method: "POST",
                 body: formData
             });
