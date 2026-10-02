@@ -831,7 +831,8 @@ body{
 }
 
 .social-t {
-    margin: 15px 0;
+    margin-top: 15px;
+    margin-bottom: 5px;
 }
 
 .social-t i {
@@ -846,6 +847,54 @@ body{
 
 .book-t img {
     width: 60px;
+}
+
+.ssoma-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0px;
+    width: fit-content;
+
+    margin-top: 0px;
+    margin-left: -10px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.ssoma-link img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+
+    margin: 0;
+}
+
+.bookl-link {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: fit-content;
+
+    margin-top: 0px;
+    margin-left: 0px; 
+
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.bookl-link img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain;
+
+    margin: 0;
 }
 
 .wsp-chat {
@@ -1247,6 +1296,28 @@ background: linear-gradient(
 
     .menu-t ul {
         padding: 0;
+    }
+
+    .ssoma-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    margin: 18px auto 0 auto;
+    }
+    
+    .bookl-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: fit-content;
+    margin: 18px auto 0 auto;
+    }
+
+    .bookl-link img,.ssoma-link img {
+        margin: 0;
     }
 
     .wsp-text {
