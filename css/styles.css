@@ -1177,7 +1177,7 @@ background: linear-gradient(
 
 .equipo-descripcion {
     color: #5d6570;
-
+    text-align: justify;
     font-size: 15px;
     line-height: 1.8;
 
