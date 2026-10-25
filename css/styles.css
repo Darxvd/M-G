@@ -1242,7 +1242,86 @@ background: linear-gradient(
     margin: 0;
 }
 
+.banner-principal {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 290px;
+    overflow: hidden;
+    color: #ffffff;
+    background-color: #0b2d5d;
+}
 
+.banner-imagen {
+    position: absolute;
+    inset: 0;
+    background-image: url(
+        "https://mygserviciosgenerales.netlify.app/css/img/banner/img_banner_1_1.jpg"
+    );
+    background-size: cover;
+    background-position: center 45%;
+    background-repeat: no-repeat;
+}
+
+.banner-capa {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(5, 35, 77, 0.98) 0%,
+        rgba(7, 43, 88, 0.88) 35%,
+        rgba(7, 43, 88, 0.30) 72%,
+        rgba(7, 43, 88, 0.08) 100%
+    );
+}
+
+.contenedor_servicios {
+    position: relative;
+    z-index: 1;
+    width: min(1120px, calc(100% - 48px));
+    margin-inline: auto;
+    padding: 38px 0;
+}
+
+.subtitulo-seccion {
+    margin: 0 0 10px;
+    color: #0b5cab;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.subtitulo-seccion::after {
+    content: "";
+    display: block;
+    width: 27px;
+    height: 2px;
+    margin-top: 7px;
+    background-color: #38bdf8;
+}
+
+.subtitulo-claro {
+    color: #ffffff;
+}
+
+.banner-contenido h1 {
+    max-width: 540px;
+    margin: 0 0 16px;
+    color: #ffffff;
+    font-size: clamp(2rem, 3.5vw, 3.1rem);
+    font-weight: 700;
+    line-height: 1.08;
+}
+
+.banner-descripcion {
+    max-width: 480px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 0.91rem;
+    line-height: 1.65;
+}
 
 
 @media (max-width: 1024px) {
@@ -1303,6 +1382,14 @@ background: linear-gradient(
 
     .equipo-contenido {
         padding-left: 0;
+    }
+
+        .banner-principal {
+        min-height: 300px;
+    }
+
+    .contenedor_servicios {
+        width: calc(100% - 40px);
     }
 
 }
@@ -1748,5 +1835,43 @@ background: linear-gradient(
         font-size: 16px;
     }
 
+    .banner-principal {
+        min-height: 360px;
+        align-items: flex-end;
+    }
+
+    .banner-imagen {
+        background-position: 62% center;
+    }
+
+    .banner-capa {
+        background: linear-gradient(
+            0deg,
+            rgba(5, 35, 77, 0.98) 0%,
+            rgba(5, 35, 77, 0.85) 48%,
+            rgba(5, 35, 77, 0.22) 100%
+        );
+    }
+
+    .contenedor_servicios {
+        width: calc(100% - 70px);
+        padding: 38px 0 32px;
+    }
+
+    .banner-contenido h1 {
+        font-size: clamp(2rem, 9vw, 2.65rem);
+    }
+
+    .banner-descripcion {
+        font-size: 0.9rem;
+    }
+
+    .banner-descripcion p{
+        text-align: justify;
+    }
+
+    .salto-escritorio {
+        display: none;
+    }
 
 }
